@@ -4,11 +4,11 @@ body {
 }
 
 .container {
-    width: 360px;
+    width: 400px;
     padding: 33px;
     text-align: center;
     background-color: #fff;
-    margin: 20px auto; /* Center the container */
+    margin: 20px auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -20,12 +20,13 @@ h1 {
 
 .inputs {
     display: flex;
+    flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
 }
 
-input[type="text"] {
-    width: 70%;
+input[type="text"], input[type="date"], select {
+    width: 100%;
     padding: 8px;
     border: 2px solid rgb(6, 145, 145);
     outline: none;
@@ -34,13 +35,14 @@ input[type="text"] {
 }
 
 button {
-    width: 25%;
+    width: 100%;
     background-color: rgb(4, 29, 29);
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
+    padding: 10px;
     transition: background-color 0.3s;
 }
 
@@ -58,7 +60,7 @@ button:hover {
     border-radius: 5px;
     list-style: none;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 10px;
 }
 
@@ -73,16 +75,25 @@ button:hover {
     color: #ff1a1a;
 }
 
-/* Checkbox styling */
 .task-checkbox {
     width: 18px;
     height: 18px;
     cursor: pointer;
-    accent-color: rgb(6, 145, 145); /* Color of the checkbox */
+    accent-color: rgb(6, 145, 145);
 }
 
-/* Completed task styling */
 .completed {
     text-decoration: line-through;
     color: gray;
+}
+
+.task-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.task-category, .task-due {
+    font-size: 14px;
+    color: #ccc;
 }
