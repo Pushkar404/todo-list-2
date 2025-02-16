@@ -4,6 +4,16 @@ let category = document.getElementById("category");
 let customCategory = document.getElementById("customCategory");
 let text = document.querySelector(".text");
 
+// Set default due date to today
+document.addEventListener("DOMContentLoaded", function() {
+    let today = new Date().toISOString().split("T")[0]; // Format: YYYY-MM-DD
+    dueDate.value = today;
+
+    // Load tasks from local storage
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    tasks.forEach(task => renderTask(task));
+});
+
 // Show/hide custom category input
 category.addEventListener("change", function() {
     if (category.value === "Custom") {
@@ -11,12 +21,6 @@ category.addEventListener("change", function() {
     } else {
         customCategory.style.display = "none";
     }
-});
-
-// Load tasks from local storage on page load
-document.addEventListener("DOMContentLoaded", function() {
-    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    tasks.forEach(task => renderTask(task));
 });
 
 // Add task
@@ -45,7 +49,7 @@ function Add() {
 
         // Clear inputs
         inputs.value = "";
-        dueDate.value = "";
+        dueDate.value = today; // Reset due date to today
         customCategory.value = "";
         category.value = "Personal";
         customCategory.style.display = "none";
@@ -100,11 +104,9 @@ function deleteTask(taskText) {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-// Delete checked tasks when the page is closed or hidden
-document.addEventListener("visibilitychange", function() {
-    if (document.visibilityState === "hidden") {
-        let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-        tasks = tasks.filter(task => !task.completed); // Keep only incomplete tasks
-        localStorage.setItem("tasks", JSON.stringify(tasks));
-    }
+// Delete checked tasks when the page is closed
+window.addEventListener("beforeunload", function() {
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    tasks = tasks.filter(task => !task.completed); // Keep only incomplete tasks
+    localStorage.setItem("tasks", JSON.stringify(tasks));
 });
