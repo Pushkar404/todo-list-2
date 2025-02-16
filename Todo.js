@@ -100,9 +100,11 @@ function deleteTask(taskText) {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-// Delete checked tasks when the page is closed
-window.addEventListener("beforeunload", function() {
-    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    tasks = tasks.filter(task => !task.completed); // Keep only incomplete tasks
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+// Delete checked tasks when the page is closed or hidden
+document.addEventListener("visibilitychange", function() {
+    if (document.visibilityState === "hidden") {
+        let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+        tasks = tasks.filter(task => !task.completed); // Keep only incomplete tasks
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
 });
