@@ -1,0 +1,88 @@
+body {
+    background-color: rgb(4, 29, 29);
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 360px;
+    padding: 33px;
+    text-align: center;
+    background-color: #fff;
+    margin: 20px auto; /* Center the container */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: rgb(4, 29, 29);
+    margin-bottom: 20px;
+}
+
+.inputs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 8px;
+    border: 2px solid rgb(6, 145, 145);
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button {
+    width: 25%;
+    background-color: rgb(4, 29, 29);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgb(6, 145, 145);
+}
+
+.text ul {
+    position: relative;
+    background-color: rgb(5, 31, 31);
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.text ul i {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: #ff4d4d;
+}
+
+.text ul i:hover {
+    color: #ff1a1a;
+}
+
+/* Checkbox styling */
+.task-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: rgb(6, 145, 145); /* Color of the checkbox */
+}
+
+/* Completed task styling */
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
