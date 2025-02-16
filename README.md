@@ -22,4 +22,4 @@ cd todo-list
 Issues & pull requests are welcome!  
 
 ### 🙌 Thanks  
-Huge thanks to **FOSS Club** for their support! ❤️  
+Huge thanks to **FOSS Club** for their support! ❤️ github.com/Predator11223  
