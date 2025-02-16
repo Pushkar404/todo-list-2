@@ -99,3 +99,10 @@ function deleteTask(taskText) {
     tasks = tasks.filter(task => task.text !== taskText);
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
+
+// Delete checked tasks when the page is closed
+window.addEventListener("beforeunload", function() {
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    tasks = tasks.filter(task => !task.completed); // Keep only incomplete tasks
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+});
