@@ -26,7 +26,7 @@ h1 {
 }
 
 input[type="text"], input[type="date"], select {
-    width: 100%;
+    width: 80%;
     padding: 8px;
     border: 2px solid rgb(6, 145, 145);
     outline: none;
@@ -88,7 +88,7 @@ button:hover {
 }
 
 .task-details {
-    width: 100%; /* this is added now */
+    /*width: 100%; this is added now */
     display: flex;
     flex-direction: column;
     gap: 5px;
