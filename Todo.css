@@ -26,7 +26,7 @@ h1 {
 }
 
 input[type="text"], input[type="date"], select {
-    width: 80%;
+    width: 100%;
     padding: 8px;
     border: 2px solid rgb(6, 145, 145);
     outline: none;
