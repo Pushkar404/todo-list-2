@@ -14,7 +14,7 @@ This is my second attempt at creating this website, with help from **FOSS Club**
 
 ## 🚀 Setup  
 ```sh  
-git clone https://github.com/your-username/todo-list.git  
+git clone https://github.com/Pushkar404/todo-list-2.git  
 cd todo-list  
 ```  
 
